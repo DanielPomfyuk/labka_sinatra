@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'activerecord'
 gem 'rake'
+
 gem 'rack-flash3', :git => "git://github.com/treeder/rack-flash.git"
 
 group :development do
