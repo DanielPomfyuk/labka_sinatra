@@ -79,15 +79,13 @@ end
 post '/posts/new' do 
 	Post.create(params[:post])
  #  Post.create(user_id:session[:user_id])
-	
-
 	redirect '/home'
 
 end
 
 
 
-puts "the user id is" +" "+ (Post.last.user_id).to_s
+
 
 
 
