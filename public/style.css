@@ -1,0 +1,241 @@
+body{
+	background-image:url("/bk_pic3.png");
+	color:white;
+}
+img{
+	float:left;
+	margin-top:1em;
+	margin-right: 1em;
+}
+.header1{
+	font-family:fantasy;
+	margin-top: 3em;
+	font-size: 18px;
+	max-width:370px;
+	margin-left: 29.5em;
+	border:5px solid grey;
+	border-radius: 10px;
+	padding-left: 1.5em;
+	background-image: url("/bk_pic2.png");
+
+}
+#content{
+	max-width:400px;
+	margin-left:33.6em ;
+	color:white;
+
+}
+
+#login{
+	float:right;
+	border:5px solid grey;
+	border-radius: 10px;
+	width:400px;
+	height:300px;
+	background-image: url("/bk_pic2.png");
+	margin-top: 1em;
+}
+#login form{	
+	margin:20px;
+	padding: 5px 8px;
+	width: 300px;
+
+}
+
+.formlabel{
+	font-size: 20px;
+	color: white;
+    display: block;
+    padding: 20px  7px 7px  ;
+   
+}
+#login form .field {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+}
+#signin_submit {
+    background-color:#4682B4; 
+    border-radius: 10px;  
+    border: 1px solid #3399dd;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 5px 0 0;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 #3399dd;
+}
+.submit {
+    color: white;
+    font-size: 17px;
+    margin: 12px 0 12px 0;
+}
+.submit #remember {
+    position: relative;
+
+}
+.submit .labelInline {
+    display: inline;
+
+}
+.link_bottom {
+    background-color:#4682B4; 
+    border-radius: 10px;  
+    border: 1px solid #3399dd;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 5px 0 0;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 #3399dd;
+    text-decoration: none;
+
+}
+.forgot {
+    margin-bottom: 1px;
+}
+
+
+
+
+#content2{
+	width:400px;
+	margin-left:33.6em;
+	color:white;
+}
+
+#sign_up{
+	float:right;
+	border:5px solid grey;
+	border-radius: 10px;
+	width:400px;
+	height:310px;
+	background-image: url("/bk_pic2.png");
+	margin-top: 1em;
+}
+#sign_up form{	
+	margin:20px;
+	padding: 5px 8px;
+	width: 300px;
+
+}
+.fname_label{
+	font-size: 20px;
+	color: white;
+    display: block;
+   
+   
+}
+#sign_up form .field_fname {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+ 
+}
+.lname_label{
+	font-size: 20px;
+	color: white;
+    display: block;
+    margin-top: 0.5em;
+ 
+   
+}
+#sign_up form .field_lname {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+ 
+}
+.email_label{
+	font-size: 20px;
+	color: white;
+    display: block;
+    margin-top: 0.5em;
+ 
+   
+}
+#sign_up form .field_email {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+ 
+}
+.password_label{
+	font-size: 20px;
+	color: white;
+    display: block;
+    margin-top: 0.5em;
+ 
+   
+}
+#sign_up form .field_password {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+    margin-bottom: 0.5em
+ 
+}
+.header2{
+	width: 200px;
+	margin-left: 7em;
+	background-color:#4682B4; 
+    border-radius: 10px;  
+    border: 1px solid #3399dd;
+    color: #FFF;
+    font-size: 20px;
+    padding: 4px ;
+    text-shadow: 0 -1px 0 #3399dd;
+}
+.homepage_header{
+	margin-left: 20em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	font-family: arial;
+	font-weight:bold;	
+}
+.notice{
+	margin-left:20em;
+}
+.logout {
+	float:right;
+	background-color:#4682B4; 
+    border-radius: 10px;  
+    border: 1px solid #3399dd;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 #3399dd;
+    margin-right: 22em;
+    margin-top: 2em;
+    clear: both;
+
+}
+.logout a {
+	text-decoration: none;
+	color:white;
+
+}
+.homepage_subheader{
+	font-size:30px;
+	background-color:#4682B4; 
+    border-radius: 10px;  
+    border: 1px solid #3399dd;
+    color: #FFF;
+    font-weight: bold;
+    padding: 4px 10px 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

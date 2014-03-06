@@ -1,0 +1,26 @@
+<div class="header1">
+	<img src="/ball_pic2.jpeg" width="100px" height="100px">
+	<h2> Welcome to NBA offcourt</h2>
+	<p>
+		Stay up to date with your favorites players.
+	</p>
+</div>
+
+<div id="content">
+	<div id="login">
+		<form action="/sessions/new" method="POST">
+		  <label for="email" class="formlabel">Please enter your email</label>
+		  <input type="text" name="email" class="field">
+		  <label for="password" class="formlabel">Password</label>
+		  <input type="password" name="password" class="field">
+		  <div class="submit">
+		         <input type="submit" value="Sign In" id="signin_submit"/>
+                 <input type="checkbox" name="remember" id="remember"/>
+                 <label for="remember" id="labelInline">Remember me</label>
+           </div>
+           <div class="forgot">
+                Don't have an account ? Please <a href="/users/new" class="link_bottom">Sign up</a>
+           </div>
+		</form>
+    </div>
+</div>

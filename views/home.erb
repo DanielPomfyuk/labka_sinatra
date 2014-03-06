@@ -1,0 +1,29 @@
+<div class="homepage_header">
+Welcome,
+<%=@user.fname if @user %>
+</div>
+
+<div id="content">
+	<span class="homepage_subheader">Create a new post </span>
+	<div id="login">
+		<form action="/posts/new" method="POST">
+		  <label for="title" class="formlabel"> Title </label>
+		  <input type="text" name="[post]title" class="field">
+		  <label for="content" class="formlabel">Content</label>
+		  <textarea rows="4" cols="50" name="[post]content"  class="field">Enter text here 
+		  </textarea>	
+		  <div class="submit">
+		         <input type="submit" value="Submit" id="signin_submit"/>
+          </div>
+		</form>
+    </div>
+</div>
+
+
+<button class="logout">
+	<a href="/logout">Logout</a>
+</button>
+
+
+
+
