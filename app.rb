@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-configure(:development){set :database, "sqlite:///blog.sqlite3"}
+configure(:development){set :database, "sqlite:///my_app.sqlite3"}
 set :sessions, true
 
 require './models'
@@ -20,12 +20,11 @@ def current_user
   else
     nil
   end
-
 end
 
 
+
 get '/' do
-  
   erb :sign_in
 end
 
@@ -38,30 +37,24 @@ end
 
 post '/sessions/new' do
 
-
   @user = User.where(email: params[:email]).first
   if @user && @user.password == params[:password]
       flash[:notice] = "You've been signed in successfully."
       session[:user_id] = @user.id
     
   else
-    flash[:notice] = "There was a problem signing you in."
+    flash[:alert] = "There was a problem signing you in."
     redirect '/users/new'
   end
 
   redirect '/home'
+
 end
 
 
 get '/logout' do
   session[:user_id] = nil
   redirect '/'
-end
-
-
-get '/users/:id/addresses' do
-	@user = User.find(params[:id])
-	erb :addresses
 end
 
 
@@ -76,13 +69,12 @@ post '/users/new' do
   redirect '/'
 end
 
+
 post '/posts/new' do 
-	Post.create(params[:post])
- #  Post.create(user_id:session[:user_id])
+	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
 	redirect '/home'
 
 end
-
 
 
 

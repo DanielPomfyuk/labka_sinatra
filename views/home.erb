@@ -1,16 +1,46 @@
+<style>
+  body{
+  	   background-image: url("/bk_pic5.png");
+       color:white;
+  }
+</style>
+
+<div class="layout_content">
+        <% if session[:user_id] %>
+              <ul id="nav">
+                <li class="list">
+                  <a href="/">
+                    Logout
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="/home">
+                    Tweets
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="/home">
+                    Home
+                  </a>
+                </li>
+              </ul>
+          <% end %>
+    </div>
+
 <div class="homepage_header">
-Welcome,
-<%=@user.fname if @user %>
+	Welcome,
+	<%=@user.fname if @user %>
 </div>
 
-<div id="content">
+<div id="homepage_content">
 	<span class="homepage_subheader">Create a new post</span>
-	<div id="login">
+	<div id="homepage_login">
 		<form action="/posts/new" method="POST">
 		  <label for="title" class="formlabel"> Title </label>
-		  <input type="text" name="[post]title" class="field">
+		  <input type="text" name="title" class="field">
 		  <label for="content" class="formlabel">Content</label>
-		  <textarea rows="4" cols="50" name="[post]content"  class="field">Enter text here 
+		  <textarea rows="4" cols="50" name="content"  class="field">
+		  	Enter text here 
 		  </textarea>	
 		  <div class="submit">
 		         <input type="submit" value="Submit" id="signin_submit"/>
@@ -20,10 +50,27 @@ Welcome,
 </div>
 
 
-<button class="logout">
-	<a href="/logout">Logout</a>
-</button>
+<div id="posts">
+	    <h1 class="tweets">
+	       Tweets 
+	    </h1>
 
+		<% Post.all.each do |post|%>
+		    <hr color="grey">
+			<div class="post_fname">
+			   @<%=current_user.fname + current_user.lname %>
+			</div>
+			<div class="post_title">   
+			   <%= post.title %>
+			</div>  
+			<div class="post_content"> 
+			   <%= post.content %>
+			</div>
+			<br>
+		<% end %>	
+<div>
+
+	
 
 
 
