@@ -161,7 +161,7 @@ body{
 
 }
 .homepage_header{
-	margin-left: 3em;
+	margin-left: 5em;
 	margin-top: 1em;
 	margin-bottom: 2em;
 	font-family: arial;
@@ -215,8 +215,7 @@ ul#nav li{
     float:right;
     display: inline;
     margin: 0;
-    padding: 25px;
-
+    padding-left: 25px;
 }
 ul a{
     text-decoration: none;
@@ -225,7 +224,7 @@ ul a{
     font-weight: bold;
 }
 .layout_content{
-    margin-right: 2em;
+    margin-right: 8em;
 }
 #homepage_content{
     width:400px;
@@ -273,6 +272,37 @@ ul a{
 }
 .post_content{
     padding-left: 1.5em;
+}
+.profile{
+    float:left;
+    width:200px;
+    height:150px;
+    border:5px solid grey;
+    border-radius: 10px;
+    background-image: url("/bk_pic2.png");
+    margin-left: 8em;
+    
+}
+.profile_pic{
+    float:left;
+    padding-left: 1.5em;
+    padding-top: 1.3em;
+}
+.profile_full_name{
+    float:left;
+    clear:both;
+    padding-left: 2.5em;
+    font-size: 20px;
+}
+#profile_posts{
+    float:left;
+    width:500px;
+    border:5px solid grey;
+    border-radius: 10px;
+    background-image: url("/bk_pic2.png");
+    margin-left:8em;
+    margin-top: 0.9em;  
+    margin-bottom: 3em;
 }
 
 

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	has_many :posts
 	has_many :users_addresses
 	has_many :addresses, through: :users_addresses
+	has_one :profile
 end
 
 class Post < ActiveRecord::Base
@@ -16,4 +17,9 @@ end
 class UsersAddress < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :address
+end
+
+
+class Profile < ActiveRecord::Base
+    belongs_to :user
 end

@@ -19,13 +19,18 @@
                   </a>
                 </li>
                 <li class="list">
+                  <a href="/profile">
+                  	Profile
+                  </a>	
+                </li>
+                <li class="list">
                   <a href="/home">
                     Home
                   </a>
                 </li>
               </ul>
-          <% end %>
-    </div>
+        <% end %>
+</div>
 
 <div class="homepage_header">
 	Welcome,
@@ -56,7 +61,7 @@
 		<% Post.all.each do |post|%>
 		    <hr color="grey">
 			<div class="post_fname">
-			   @<%=current_user.fname + current_user.lname %>
+			   @<%=post.user.fname + post.user.lname %>
 			</div>
 			<div class="post_title">   
 			   <%= post.title %>

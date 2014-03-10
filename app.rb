@@ -33,7 +33,10 @@ get '/home' do
   erb :home
 end
 
-
+get '/profile' do 
+  @user = current_user
+  erb :profile
+end
 
 post '/sessions/new' do
 
@@ -74,6 +77,10 @@ post '/posts/new' do
 	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
 	redirect '/home'
 
+end
+
+post '/profile/new' do 
+  Profile.create(gender:params[:gender], location:params[:location], interest:params[:interest], user_id:current_user.id)
 end
 
 
