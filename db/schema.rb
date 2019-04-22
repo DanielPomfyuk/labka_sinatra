@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309215640) do
+ActiveRecord::Schema.define(version: 2019_04_21_120607) do
 
-  create_table "addresses", force: true do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string "line_1"
     t.string "line_2"
     t.string "city"
@@ -21,29 +21,41 @@ ActiveRecord::Schema.define(version: 20140309215640) do
     t.string "zip"
   end
 
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "profiles", force: true do |t|
-    t.string  "gender"
-    t.string  "location"
-    t.string  "interest"
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "reciever_id"
+    t.string "message_body"
     t.integer "user_id"
   end
 
-  create_table "users", force: true do |t|
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "gender"
+    t.string "location"
+    t.string "interest"
+    t.integer "user_id"
+  end
+
+  create_table "user_connections", id: false, force: :cascade do |t|
+    t.integer "user_a_id", null: false
+    t.integer "user_b_id", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
     t.string "email"
     t.string "password"
   end
 
-  create_table "users_addresses", force: true do |t|
+  create_table "users_addresses", force: :cascade do |t|
     t.integer "user_id"
     t.integer "address_id"
   end

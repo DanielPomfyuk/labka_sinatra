@@ -1,6 +1,7 @@
 
 body{
     width:1250px;
+    font-family: Arial, Helvetica, sans-serif
 }
 .sign_in_page_image{
 	float:left;
@@ -23,24 +24,17 @@ body{
 	margin-left:33.6em ;
 	color:white;
 }
-
-#login{
-	float:right;
-	border:5px solid grey;
-	border-radius: 10px;
-	width:400px;
-	height:300px;
-	background-image: url("/bk_pic2.png");
-	margin-top: 1em;
-}
-#login form{	
-	margin:20px;
-	padding: 5px 8px;
-	width: 300px;
+#login form{
+    display: block;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 8px;
+    width: 500px;
 }
 .formlabel{
 	font-size: 20px;
-	color: white;
+	color: black;
     display: block;
     padding: 20px  7px 7px  ;   
 }
@@ -65,6 +59,42 @@ body{
     font-size: 17px;
     margin: 12px 0 12px 0;
 }
+#follow{
+    background-color: #4CAF50;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 5px 0 0;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 green;
+    display: inline-block;
+}
+#send{
+    background-color: blue;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 5px 0 0;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 darkblue;
+    display: inline-block;
+}
+#unfollow{
+    background-color: tomato;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 5px 0 0;
+    padding: 4px 10px 5px;
+    text-shadow: 0 -1px 0 red;
+    display: inline-block;
+}
 .link_bottom {
     background-color:#4682B4; 
     border-radius: 10px;  
@@ -80,80 +110,15 @@ body{
 .forgot {
     margin-bottom: 1px;
 }
-#content2{
-	width:400px;
-	margin-left:33.6em;
-	color:white;
-}
-#sign_up{
-	float:right;
-	border:5px solid grey;
-	border-radius: 10px;
-	width:400px;
-	height:310px;
-	background-image: url("/bk_pic2.png");
-	margin-top: 1em;
-}
-#sign_up form{	
-	margin:20px;
+#sign_up form{
+    display: block;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
 	padding: 5px 8px;
-	width: 300px;
+	width: 500px;
 }
-.fname_label{
-	font-size: 20px;
-	color: white;
-    display: block;
-     
-}
-#sign_up form .field_fname {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
- 
-}
-.lname_label{
-	font-size: 20px;
-	color: white;
-    display: block;
-    margin-top: 0.5em;
- 
-   
-}
-#sign_up form .field_lname {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
- 
-}
-.email_label{
-	font-size: 20px;
-	color: white;
-    display: block;
-    margin-top: 0.5em;
- 
-   
-}
-#sign_up form .field_email {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
- 
-}
-.password_label{
-	font-size: 20px;
-	color: white;
-    display: block;
-    margin-top: 0.5em;
- 
-   
-}
-#sign_up form .field_password {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
-    margin-bottom: 0.5em
- 
-}
+
 .header2{
     margin-top: 2em;
     margin-bottom: 1em;
@@ -175,13 +140,9 @@ body{
 }
 .homepage_subheader{
 	font-size:30px;
-	background-image: url("/bk_pic2.png");
-    border-radius: 10px;  
-    border: 4px solid grey;
-    color: #FFF;
+    color: black;
     font-weight: bold;
-    padding: 4px 10px 5px;  
-    margin-left: 0.5em;
+    padding: 4px 10px 5px;
 }
 .sign_in_link{
     text-decoration: none;
@@ -219,26 +180,29 @@ ul#nav li{
 }
 ul a{
     text-decoration: none;
-    color:white;
+    color:black;
     font-size: 18px;
     font-weight: bold;
 }
 .layout_content{
     margin-right: 8em;
+    color: black;
+}
+.layout_content li,a{
+    color: black;
 }
 #homepage_content{
     width:400px;
     margin-left:3em ;
-    color:white;
+    color:black;
     margin-top: 5em;
 }    
 #homepage_login{
     float:left;
-    border:5px solid grey;
+    border:2px solid grey;
     border-radius: 10px;
     width:400px;
     height:300px;
-    background-image: url("/bk_pic2.png");
     margin-top: 1em;
 }
 #homepage_login form{    
@@ -254,18 +218,15 @@ ul a{
 #posts{
     float:left;
     width:500px;
-    border:5px solid grey;
     border-radius: 10px;
-    background-image: url("/bk_pic2.png");
     margin-left:8em;
     margin-top: 0.9em;  
-}
-.tweets{
-    padding-left:6em;
 }
 .post_fname{
     padding-left: 1em;
     font-size:20px;
+    color: #3399dd;
+    display: inline-block;
 }
 .post_title{
     padding-left: 1.5em;
@@ -279,7 +240,6 @@ ul a{
     height:150px;
     border:5px solid grey;
     border-radius: 10px;
-    background-image: url("/bk_pic2.png");
     margin-left: 8em;
     
 }
@@ -294,12 +254,12 @@ ul a{
     padding-left: 2.5em;
     font-size: 20px;
 }
+
 #profile_posts{
     float:left;
     width:500px;
     border:5px solid grey;
     border-radius: 10px;
-    background-image: url("/bk_pic2.png");
     margin-left:8em;
     margin-top: 0.9em;  
     margin-bottom: 3em;

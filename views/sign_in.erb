@@ -1,34 +1,84 @@
 <style>
-  body{
-  	   background-image: url("/bk_pic3.png");
-       color:white;
-  }
+	body {
+		background-image: url("/sb.png");
+		font-family: Arial, Helvetica,sans-serif;
+		max-width: 500px;
+		margin: auto;
+	}
+	* {box-sizing: border-box}
+	input[type=text], input[type=password] {
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		display: inline-block;
+		border: none;
+		background: #f1f1f1;
+	}
+	button{
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+	}
+	button[type=submit]{
+		background-color: #4CAF50;
+
+	}
+	button[type=button]{
+		background-color: #3399dd;
+	}
+
+	button:hover {
+		opacity: 0.8;
+	}
+	.imgcontainer {
+		text-align: center;
+		margin: 24px 0 12px 0;
+		position: relative;
+	}
+
+	img.avatar {
+		width: 40%;
+		border-radius: 50%;
+	}
+
+	.container {
+		padding: 16px;
+	}
+
+	span.psw {
+		float: right;
+		padding-top: 16px;
+	}
+	.modal-content {
+		background-color: #fefefe;
+		margin: 5% auto 15% auto;
+		border: 1px solid #888;
+		width: 80%;
+	}
 </style>
 
+<div class="modal">
+	<form class="modal-content" action="/sessions/new" method="POST">
+		<div class="imgcontainer">
+			<img src="/avatar.png" alt="Avatar" class="avatar">
+		</div>
 
-<div class="header1">
-	<img src="/ball_pic2.jpeg" width="100px" height="100px" class="sign_in_page_image">
-	<h2> Welcome to NBA offcourt</h2>
-	<p>
-		Stay up to date with your favorites players.
-	</p>
-</div>
+		<div class="container">
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter your email" name="email" required>
 
-<div id="content">
-	<div id="login">
-		<form action="/sessions/new" method="POST">
-		  <label for="email" class="formlabel">Please enter your email</label>
-		  <input type="text" name="email" class="field">
-		  <label for="password" class="formlabel">Password</label>
-		  <input type="password" name="password" class="field">
-		  <div class="submit">
-		         <input type="submit" value="Sign In" id="signin_submit"/>
-                 <input type="checkbox" name="remember" id="remember"/>
-                 <label for="remember" id="labelInline">Remember me</label>
-           </div>
-           <div class="forgot">
-                Don't have an account ? Please <a href="/users/new" class="link_bottom">Sign up</a>
-           </div>
-		</form>
-    </div>
+			<label for="password"><b>Password</b></label>
+			<input type="password" name="password" required>
+			<label>
+				<input type="checkbox" checked="checked" name="remember"> Remember me
+			</label>
+			<button type="submit">Login</button>
+			<a href="users/new">
+			<button type="button">Sign up</button>
+			</a>
+		</div>
+	</form>
 </div>

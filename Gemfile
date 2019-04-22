@@ -1,21 +1,14 @@
 source 'http://rubygems.org'
-ruby '2.0.0'
-
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'activerecord'
 gem 'rake'
+gem 'pry'
 
+gem 'rack-flash3'
 
-gem 'rack-flash3', :git => "git://github.com/treeder/rack-flash.git"
+gem 'sqlite3'
 
-group :development do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
 
 
 

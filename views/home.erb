@@ -1,79 +1,112 @@
 <style>
-  body{
-  	   background-image: url("/bk_pic5.png");
-       color:white;
+  body {
+    background-image: url("/sb.png");
   }
 </style>
 
 <div class="layout_content">
-        <% if session[:user_id] %>
-              <ul id="nav">
-                <li class="list">
-                  <a href="/">
-                    Logout
-                  </a>
-                </li>
-                <li class="list">
-                  <a href="/home">
-                    Tweets
-                  </a>
-                </li>
-                <li class="list">
-                  <a href="/profile">
-                  	Profile
-                  </a>	
-                </li>
-                <li class="list">
-                  <a href="/home">
-                    Home
-                  </a>
-                </li>
-              </ul>
-        <% end %>
-</div>
-
-<div class="homepage_header">
-	Welcome,
-	<%=@user.fname if @user %>
+  <% if session[:user_id] %>
+    <ul id="nav">
+      <li class="list">
+        <a href="/logout">
+          Logout
+        </a>
+      </li>
+      <li class="list">
+        <a href="/profile">
+          Profile
+        </a>
+      </li>
+      <li class="list">
+        <a href="/only_friends">
+          Friends
+        </a>
+      </li>
+      <li class="list">
+        <a href="/home">
+          Home
+        </a>
+      </li>
+    </ul>
+  <% end %>
 </div>
 
 <div id="homepage_content">
-	<span class="homepage_subheader">Create a new post</span>
-	<div id="homepage_login">
-		<form action="/posts/new" method="POST">
-		  <label for="title" class="formlabel"> Title </label>
-		  <input type="text" name="title" class="field">
-		  <label for="content" class="formlabel">Content</label>
-		  <textarea rows="4" cols="50" name="content"  class="field">Enter text here</textarea>	
-		  <div class="submit">
-		         <input type="submit" value="Submit" id="signin_submit"/>
-          </div>
-		</form>
-    </div>
+  <span class="homepage_subheader">Post a tweet</span>
+  <div id="homepage_login">
+    <form action="/posts/new" method="POST">
+      <label for="title" class="formlabel"> Title </label>
+      <input type="text" name="title" class="field">
+      <label for="content" class="formlabel">Content</label>
+      <textarea rows="4" cols="50" name="content" class="field"></textarea>
+      <div class="submit">
+        <input type="submit" value="Pooooooost" id="signin_submit"/>
+      </div>
+    </form>
+  </div>
 </div>
 
-
 <div id="posts">
-	    <h1 class="tweets">
-	       Tweets 
-	    </h1>
-
-		<% Post.all.each do |post|%>
-		    <hr color="grey">
-			<div class="post_fname">
-			   @<%=post.user.fname + post.user.lname %>
-			</div>
-			<div class="post_title">   
-			   <%= post.title %>
-			</div>  
-			<div class="post_content"> 
-			   <%= post.content %>
-			</div>
-			<br>
-		<% end %>	
-<div>
-
-	
-
-
-
+  <%if @friends %>
+    <h1 >
+      Your friend`s tweets
+    </h1>
+    <%@friends.each do|friend| %>
+      <% friend.posts.each do |post| %>
+        <div class="post_fname">
+          @<%= friend.fname + friend.lname %>
+            <form  action="/users/unfollow/<%= post.user.id %>" method="post">
+              <input type="submit" id="unfollow" value="Unfollow">
+            </form>
+          <form  action="/users/send_message/<%= post.user.id %>" method="post">
+            <input type="text" placeholder="Your massage" name="message_body" class="field">
+            <input type="submit" id="send" value="Send">
+          </form>
+        </div>
+        <div class="post_title">
+          <h3>
+            <%= post.title %>
+          </h3>
+        </div>
+        <div class="post_content">
+          <%= post.content %>
+          <br/>
+        </div>
+        <hr color="#3399dd">
+      <% end %>
+      <%end %>
+  <%else %>
+    <h1 >
+      All tweets
+    </h1>
+  <% Post.all.each do |post| %>
+    <div class="post_fname">
+      @<%= post.user.fname + post.user.lname %>
+      <% if current_user.users.include?(post.user) %>
+        <form  action="/users/unfollow/<%= post.user.id %>" method="post">
+          <input type="submit" id="unfollow" value="Unfollow">
+        </form>
+        <form  action="/users/send_message/<%= post.user.id %>" method="post">
+          <input type="text" placeholder="Your massage" name="message_body" class="field">
+          <input type="submit" id="send" value="Send">
+        </form>
+      <% elsif current_user == post.user %>
+      <% else %>
+        <form action="/users/follow/<%= post.user.id %>" method="post">
+          <input type="submit" id="follow" value="Follow">
+        </form>
+      <% end %>
+    </div>
+    <div class="post_title">
+      <h3>
+      <%= post.title %>
+      </h3>
+    </div>
+    <div class="post_content">
+      <%= post.content %>
+      <br/>
+    </div>
+    <hr color="#3399dd">
+    <% end %>
+    <%end %>
+</div>

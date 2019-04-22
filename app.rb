@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-configure(:development){set :database, "sqlite:///my_app.sqlite3"}
+configure(:development){set :database, {adapter: "sqlite3", database: "my_app.sqlite3"}}
 set :sessions, true
 
 require './models'
@@ -29,13 +29,28 @@ get '/' do
 end
 
 get '/home' do
-  @user = current_user
-  erb :home
+  if !current_user
+    redirect '/'
+  else
+    @user = current_user
+    erb :home
+  end
 end
 
-get '/profile' do 
+get '/profile' do
+  if current_user
   @user = current_user
+  @messages = current_user.messages
   erb :profile
+  else
+    redirect '/'
+  end
+end
+post '/users/send_message/:reciever_id' do
+  @user = User.find(params[:reciever_id])
+  a = Message.new(sender_id:current_user.id,user_id:params[:reciever_id],message_body:params[:message_body])
+  @user.messages.push(a)
+  redirect '/'
 end
 
 post '/sessions/new' do
@@ -44,10 +59,9 @@ post '/sessions/new' do
   if @user && @user.password == params[:password]
       flash[:notice] = "You've been signed in successfully."
       session[:user_id] = @user.id
-    
   else
     flash[:alert] = "There was a problem signing you in."
-    redirect '/users/new'
+    redirect '/'
   end
 
   redirect '/home'
@@ -66,17 +80,28 @@ get '/users/new' do
   erb :signup
 end
 
+get '/only_friends' do
+  @friends = current_user.users
+  erb :home
+end
 
 post '/users/new' do
   User.create(params[:user])
   redirect '/'
 end
 
-
+post '/users/follow/:id' do
+  current_user.users.push(User.find(params[:id]))
+  redirect '/home'
+end
+post '/users/unfollow/:id' do
+  current_user.users.delete(User.find(params[:id]))
+  redirect '/home'
+end
 post '/posts/new' do 
 	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
-	redirect '/home'
-
+  @messages = current_user.messages
+  redirect '/home'
 end
 
 post '/profile/new' do 

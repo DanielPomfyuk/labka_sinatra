@@ -1,60 +1,59 @@
-GIT
-  remote: git://github.com/treeder/rack-flash.git
-  revision: 20e393cdce030f35422dba545a1fed91ed398b29
-  specs:
-    rack-flash3 (1.0.5)
-      rack
-
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (4.0.3)
-      activesupport (= 4.0.3)
-      builder (~> 3.1.0)
-    activerecord (4.0.3)
-      activemodel (= 4.0.3)
-      activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.3)
-      arel (~> 4.0.0)
-    activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.3)
-      i18n (~> 0.6, >= 0.6.4)
-      minitest (~> 4.2)
-      multi_json (~> 1.3)
-      thread_safe (~> 0.1)
-      tzinfo (~> 0.3.37)
-    arel (4.0.2)
-    atomic (1.1.15)
-    builder (3.1.4)
-    i18n (0.6.9)
-    minitest (4.7.5)
-    multi_json (1.8.4)
-    pg (0.17.1)
-    rack (1.5.2)
-    rack-protection (1.5.2)
+    activemodel (5.2.3)
+      activesupport (= 5.2.3)
+    activerecord (5.2.3)
+      activemodel (= 5.2.3)
+      activesupport (= 5.2.3)
+      arel (>= 9.0)
+    activesupport (5.2.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    arel (9.0.0)
+    coderay (1.1.2)
+    concurrent-ruby (1.1.5)
+    i18n (1.6.0)
+      concurrent-ruby (~> 1.0)
+    method_source (0.9.2)
+    minitest (5.10.3)
+    mustermann (1.0.3)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    rack (2.0.7)
+    rack-flash3 (1.0.5)
       rack
-    rake (10.1.1)
-    sinatra (1.4.4)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
-    sinatra-activerecord (1.3.0)
-      activerecord (>= 3.0)
-      sinatra (~> 1.0)
-    sqlite3 (1.3.9)
-    thread_safe (0.2.0)
-      atomic (>= 1.1.7, < 2)
-    tilt (1.4.1)
-    tzinfo (0.3.38)
+    rack-protection (2.0.5)
+      rack
+    rake (12.3.2)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
+    sinatra-activerecord (2.0.13)
+      activerecord (>= 3.2)
+      sinatra (>= 1.0)
+    sqlite3 (1.4.0)
+    thread_safe (0.3.6)
+    tilt (2.0.9)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord
-  pg
-  rack-flash3!
+  pry
+  rack-flash3
   rake
   sinatra
   sinatra-activerecord
   sqlite3
+
+BUNDLED WITH
+   2.0.1
